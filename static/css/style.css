@@ -1,0 +1,226 @@
+::selection {
+    color: white;
+    background: black;
+}
+
+html {
+    font-family: "Arial", "Helvetica", sans-serif;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    scroll-behavior: smooth;
+}
+
+h1 {
+    font-weight: bold;
+    letter-spacing: -1px;
+}
+
+.title {
+    line-height: 48px;
+}
+
+.title > a {
+    box-shadow: none !important;
+    background: none !important;
+}
+
+.title > a > img {
+    display: inline;
+    float: right;
+    height: 35px;
+    margin-top: 10px;
+}
+
+.title > h1 {
+    display: inline;
+    font-size: 35px;
+}
+
+a {
+    color: black;
+    font-weight: bold;
+    text-underline-offset: 3px;
+    text-decoration: underline solid 1px;
+    cursor: pointer;
+}
+
+a:hover {
+    background: black;
+    color: white;
+    box-shadow: 0 0 0 3px #000000;
+}
+
+button {
+    background: transparent;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: #000000 2px solid;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+button:hover {
+    background: black;
+    color: white;
+}
+
+.float-left {
+    float: left;
+}
+
+.dv-status {
+    background: #e8e8e8;
+}
+
+.dv-status > h2 {
+    margin-top: 0;
+}
+
+.dv-keyval {
+    margin: 10px 0;
+}
+
+.dv-keyval > .dv-key {
+    font-weight: normal;
+}
+
+.dv-keyval > .dv-val {
+    background: black;
+    color: white;
+    box-shadow: 0 0 0 3px #000000;
+    padding: 0 2px;
+    float: right;
+    font-weight: bold;
+}
+
+.feed {
+    border: #000000 solid 2px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.feed > h3 {
+    margin: 0 0 10px 0;
+    padding: 0;
+}
+
+.feed > p {
+    margin: 0;
+    padding: 0;
+}
+
+.progressbar {
+    width: 100%;
+    height: 10px;
+    background: white;
+    border: #000000 solid 1px;
+    margin: 5px 0;
+}
+
+.progressbar > .progress {
+    width: 10%;
+    height: 10px;
+    background: black;
+}
+
+.video-live {
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: 25px;
+    font-weight: bolder;
+    text-transform: uppercase;
+    color: white;
+}
+
+.video-live::before {
+    content: "🔴";
+    color: red;
+    animation: 2.5s pulse infinite;
+}
+
+.popup {
+    position: fixed;
+    left: 50%;
+    top: 150px;
+    transform: translateX(calc(-50% - 25px));
+    background: white;
+    padding: 25px;
+    width: 60%;
+    z-index: 100000;
+}
+
+.popup > .popup-title {
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.popup > .popup-title > a {
+    float: right;
+    text-decoration: none;
+    padding: 0 3px;
+}
+
+.popup-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.25);
+}
+
+.blur-page {
+    filter: blur(10px);
+    transform: scale(0.9);
+    pointer-events: none;
+}
+
+.content-wrapper {
+    transition: 0.2s ease;
+}
+
+.button-popup {
+    width: unset;
+    padding: 10px 30px;
+    margin: 20px 10px 0 0;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.5;
+    }
+}
+
+.video-time {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 25px;
+    font-weight: bolder;
+    text-transform: uppercase;
+    color: white;
+}
+
+.video-time::before {
+    content: "🔴"; /* Needed to get same height as other h2 */
+    opacity: 0;
+}
+
+.video-stream {
+    position: relative;
+}
+
+@media screen and (max-width: 630px) {
+    .title > a {
+        display: none;
+    }
+}

@@ -1,0 +1,40 @@
+#   Sensors
+# Configure your Datenvogelhäuschen's sensors here.
+sensors:
+
+  #   DHT11
+  # Enter the GPIO pin of the DHT11 here. Used for temperature and humidity.
+  # (Notice: Be aware that this pin refers to the GPIO number, not the hardware Pin number!)
+  # (More information here: https://abyz.me.uk/rpi/pigpio/)
+  dht11:
+    pin: 4
+
+  #   CCS811
+  # Enter the I2C bus number of the CCS811 here. Used for Co2 and TVOCs.
+  ccs811:
+    i2cBus: 1
+
+  #   BMP280
+  # Enter the I2C bus number of the BMP280 here. Used to measure pressure.
+  bmp280:
+    i2cBus: 1
+
+#   Status LED
+# Used to control the status LED. You can fully disable it, if it annoys you.
+statusLed:
+  enabled: true
+  pin: 27
+
+#   Internal webserver configuration.
+# Here you control how the webserver will be hosted on your PI.
+# This can be useful if your want to do some fancy networking like
+# adding a reverse proxy to host multiple services on the Datenvogelhäuschen.
+webserver:
+  port: 80
+  hostname: "0.0.0.0"
+
+#   Datenvogelhäuschen online service configuration.
+# This will be used to authenticate with the Datenvogelhäuschen servers
+# to publish data.
+onlineService:
+  baseUrl: "https://api.xn--datenvogelhuschen-0qb.de/"

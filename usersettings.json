@@ -1,0 +1,10 @@
+{
+  "dataSharing": {
+    "weather": false,
+    "bird": false,
+    "camera": false
+  },
+  "localData": {
+    "saveLocally": true
+  }
+}

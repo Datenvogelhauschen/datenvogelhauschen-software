@@ -1,0 +1,80 @@
+<!doctype html>
+
+<html lang="de">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <title>Datenvogelhäuschen - Kiosk-Ansicht</title>
+
+        <link href="manifest.webmanifest" rel="manifest">
+        <link href="img/icon.png" rel="apple-touch-icon">
+        <link href="img/icon.png" rel="shortcut icon">
+        <link href="css/style.css" rel="stylesheet" type="text/css">
+        <link href="css/bootstrap-grid.min.css" rel="stylesheet" type="text/css">
+    </head>
+
+    <body>
+        <div class="container-sm">
+            <div class="m-5"></div>
+
+            <h1>Stream des Datenvogelhäuschens.</h1>
+
+            <div class="m-5"></div>
+
+
+            <div class="row">
+                <div class="col-xl-8">
+                    <div class="video-stream container-fluid m-0 p-0">
+                        <h2 class="video-live">
+                            Live
+                        </h2>
+
+                        <h2 class="video-time" id="video-timestamp">
+                            --/--/----, -:--:-- AM
+                        </h2>
+
+                        <img class="container-fluid m-0 p-0" src="img/stream.jpg" id="stream-image">
+                    </div>
+                </div>
+
+                <div class="col-xl-4">
+                    <h2>
+                        Lokaler Vogelschutz.
+                    </h2>
+
+                    <p>
+                        Vogelschutz in Deutschland ist ein wichtiges
+                        Thema: Deutschland ist Zwischenstopp für etwa
+                        180 Wasservogelarten, darunter auch einige
+                        invasive Arten. All das ist Folge des Klimawandels,
+                        hohe Temperaturen zwingen Vögel dazu, sich
+                        auf Wanderungen zu begeben und ggf. einen
+                        neuen Lebensraum zu suchen. Dies muss
+                        überwacht werden: Hier kommt das Datenvogelhäuschen ins Spiel!
+                    </p>
+
+                    <div class="m-5"></div>
+
+                    <h2>
+                        Das Datenvogelhäuschen.
+                    </h2>
+
+                    <p>
+                        Das Datenvogelhäuschen (<a href="//datenvogelhäuschen.de">https://www.datenvogelhäuschen.de</a>)
+                        ist im Rahmen des VDE Technikpreises entstanden
+                        und soll mithilfe von Erfassung von Datenmassen dabei helfen, lokale Vögel zu schützen
+                        und die Vermehrung invasiver Arten zu überwachen.
+                        <br>
+                        <br>
+                        Mehr Infos: <a href="//datenvogelhäuschen.de">https://www.datenvogelhäuschen.de</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <script src="js/kiosk.js"></script>
+    </body>
+</html>

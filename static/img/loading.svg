@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="margin:auto;background:#fff;display:block;" width="47px" height="47px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
+    <rect x="17" y="34" width="16" height="32" fill="#000000">
+        <animate attributeName="y" repeatCount="indefinite" dur="1s" calcMode="spline" keyTimes="0;0.5;1" values="26;34;34" keySplines="0 0.5 0.5 1;0 0.5 0.5 1" begin="-0.2s"></animate>
+        <animate attributeName="height" repeatCount="indefinite" dur="1s" calcMode="spline" keyTimes="0;0.5;1" values="48;32;32" keySplines="0 0.5 0.5 1;0 0.5 0.5 1" begin="-0.2s"></animate>
+    </rect>
+    <rect x="42" y="34" width="16" height="32" fill="#000000">
+        <animate attributeName="y" repeatCount="indefinite" dur="1s" calcMode="spline" keyTimes="0;0.5;1" values="28;34;34" keySplines="0 0.5 0.5 1;0 0.5 0.5 1" begin="-0.1s"></animate>
+        <animate attributeName="height" repeatCount="indefinite" dur="1s" calcMode="spline" keyTimes="0;0.5;1" values="44;32;32" keySplines="0 0.5 0.5 1;0 0.5 0.5 1" begin="-0.1s"></animate>
+    </rect>
+    <rect x="67" y="34" width="16" height="32" fill="#000000">
+        <animate attributeName="y" repeatCount="indefinite" dur="1s" calcMode="spline" keyTimes="0;0.5;1" values="28;34;34" keySplines="0 0.5 0.5 1;0 0.5 0.5 1"></animate>
+        <animate attributeName="height" repeatCount="indefinite" dur="1s" calcMode="spline" keyTimes="0;0.5;1" values="44;32;32" keySplines="0 0.5 0.5 1;0 0.5 0.5 1"></animate>
+    </rect>
+</svg>

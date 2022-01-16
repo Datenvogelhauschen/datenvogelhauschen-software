@@ -1,0 +1,15 @@
+{
+  "background_color": "white",
+  "description": "A digital effort to protect our local fauna using data analysis",
+  "display": "fullscreen",
+  "icons": [
+    {
+      "src": "img/icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "name": "Datenvogelhäuschen Dashboard",
+  "short_name": "Datenvogelhäuschen",
+  "start_url": "/index.html"
+}

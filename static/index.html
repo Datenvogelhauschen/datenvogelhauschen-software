@@ -1,0 +1,260 @@
+<!doctype html>
+
+<html lang="de">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <title>Datenvogelhäuschen</title>
+
+        <link href="manifest.webmanifest" rel="manifest">
+        <link href="img/icon.png" rel="apple-touch-icon">
+        <link href="img/icon.png" rel="shortcut icon">
+        <link href="css/style.css" rel="stylesheet" type="text/css">
+        <link href="css/bootstrap-grid.min.css" rel="stylesheet" type="text/css">
+    </head>
+
+    <body>
+        <div class="popup-background" id="popup-background" hidden></div>
+        <div class="popup" id="popup" hidden>
+            <div class="popup-title">
+                <span id="popup-title">
+                    Popup
+                </span>
+
+                <a title="Meldung schließen." id="popup-close">
+                    &times;
+                </a>
+            </div>
+
+            <div class="content" id="popup-content">
+                <center>
+                    <img src="img/loading.svg" alt="Loading...">
+                </center>
+
+                <center>
+                    Popup Content
+                </center>
+            </div>
+        </div>
+
+        <div class="container-sm content-wrapper" id="page-contents">
+            <div class="m-5"></div>
+
+            <div class="title">
+                <h1>
+                    Dein Datenvogel&shy;häuschen.
+                </h1>
+
+                <a href="//datenvogelhäuschen.de/">
+                    <img src="img/icon.png" alt="Datenvogelhäuschen Icon">
+                </a>
+            </div>
+
+            <div class="m-3"></div>
+
+
+            <div class="row">
+                <div class="col-md-8">
+                    <h2>
+                        Aktueller Statusbericht.
+                    </h2>
+
+                    <div class="row">
+                            <div class="col-md-6">
+                                <div class="dv-keyval">
+                                    <span class="dv-key">
+                                        Temperatur:
+                                    </span>
+                                    <span class="dv-val" id="sensor-temperature">
+                                        ...
+                                    </span>
+                                </div>
+
+                                <div class="dv-keyval">
+                                    <span class="dv-key">
+                                        Luftfeuchtigkeit:
+                                    </span>
+                                    <span class="dv-val" id="sensor-humidity">
+                                        ...
+                                    </span>
+                                </div>
+
+                                <div class="dv-keyval">
+                                    <span class="dv-key">
+                                        Luftdruck:
+                                    </span>
+                                    <span class="dv-val" id="sensor-pressure">
+                                        ...
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="dv-keyval">
+                                    <span class="dv-key">
+                                        TVOC Dichte:
+                                    </span>
+                                    <span class="dv-val" id="sensor-tvoc">
+                                        ...
+                                    </span>
+                                </div>
+
+                                <div class="dv-keyval">
+                                    <span class="dv-key">
+                                        CO2 Dichte:
+                                    </span>
+                                    <span class="dv-val" id="sensor-co2">
+                                        ...
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                    <div class="row">
+                        <div class="m-4"></div>
+                        <h2>
+                            Dein Feed.
+                        </h2>
+
+                        <div id="feed">
+                            <p style="text-align: center;">
+                                Daten laden...
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="m-4"></div>
+                        <h2>
+                            Daten & Kommunikation.
+                        </h2>
+
+                        <div>
+                            Dein Datenvogelhäuschen schickt täglich neue Daten an Datenvogelhäuschen.de.
+                            Damit unterstützt du aktiv Vogelschutz in Deutschland. Hier kannst du auswählen,
+                            welche Daten du mit uns teilen möchtest. <a href="/was-passiert-mit-meinen-daten">
+                            Wir nehmen Datenschutz sehr ernst.</a>
+
+                            <br>
+                            <br>
+
+                            <div class="row">
+                                <div class="col-md">
+                                    <button class="checkbox" title="Schließt Temperatur, Feuchtigkeit, Luftdruck, TVOC Dichte und CO2 Dichte ein.">
+                                        <label>
+                                            <input type="checkbox" id="send-weather">
+                                            Wetterdaten
+                                        </label>
+                                    </button>
+                                    <br>
+
+                                    <button class="checkbox"  title="Schließt Statistiken zur Nutzung des Vogelhauses ein. Darunter fallen Brutzeiten, Betreten und Verlassen des Vogelhäuschens.">
+                                        <label>
+                                            <input type="checkbox" id="send-birddata">
+                                            Vogeldaten
+                                        </label>
+                                    </button>
+                                </div>
+
+                                <div class="col-md">
+                                    <button class="checkbox" title="Schließt alle aufgenommenen Fotos ein.">
+                                        <label>
+                                            <input type="checkbox" id="send-stream">
+                                            Kamerastream
+                                        </label>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <button id="view-data" title="* Autorisiert zudem dein Gerät, jederzeit auf deine Daten von überall aus zuzugreifen. Diese Autorisierung muss bei Browser- oder Gerätewechsel neu durch Knopfdruck genehmigt werden. Zudem läuft diese aus Sicherheitsgründen alle 6 Monate ab.">
+                                Daten auf datenvogelhäuschen.de ansehen (*)
+                            </button>
+
+                            <button id="export-data-to-usb" title="Kopiert die lokale Sensordatenbank und lokal gespeicherte Bilder auf einen eingesteckten USB-Stick.">
+                                Lokale Daten auf USB-Stick kopieren
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="m-4"></div>
+                        <h2>
+                            Über uns.
+                        </h2>
+
+                        <div>
+                            Umweltschutz muss irgendwo anfangen - hier und jetzt. Wir wollen mit dem helfen, was wir am
+                            besten können: Technik. Entstanden ist das Datenvogelhäuschen!
+                            Mit dem Datenvogelhäuschen kann jeder ohne großes Zutun die örtliche Fauna durch Analyse und
+                            anschließende Datenbereitstellung schützen.
+                        </div>
+                    </div>
+
+                    <div class="m-4"></div>
+                </div>
+
+                <div class="col-md-4">
+                    <h2>
+                        Livestream.
+                    </h2>
+
+                    <img class="container-fluid m-0 p-0" src="img/stream.jpg" id="stream-image">
+                    <div class="m-1"></div>
+                    <a id="toggle-stream-pause">Pause</a> &middot; <a href="kiosk.html" target="_blank">Kioskansicht</a>
+
+
+                    <div class="m-5"></div>
+                    <h2>
+                        Speicher.
+                    </h2>
+
+                    <div>
+                        <label>
+                            <span id="storage-usage">Lokaler Speicher (<span id="used-storage">...</span> GB / <span id="all-storage">...</span> GB)</span>
+                            <div class="progressbar">
+                                <div class="progress" style="width: 0" id="storage-usage-bar"></div>
+                            </div>
+                        </label>
+                    </div>
+
+                    <button class="checkbox mt-3" title="Wenn angekreuzt: Daten werden auf SD-Karte des Vogelhäuschens gespeichert. Diese kann der Nutzer über die Exportfunktion mit einem USB-Stick 'herunterladen'.">
+                        <label>
+                            <input type="checkbox" id="save-data-locally">
+                            Daten lokal Speichern
+                        </label>
+                    </button>
+
+                    <button id="delete-data" class="checkbox" title="Löscht alle lokalen Daten. Achtung: Gelöschte Daten sind nur schwer oder gar nicht wiederherstellbar!">
+                        Lokale Daten löschen (!)
+                    </button>
+
+                    <div class="m-5"></div>
+                    <h2>
+                        Aktionen.
+                    </h2>
+
+                    <button id="shutdown" title="Fährt dein Datenvogelhäuschen sicher runter. Nach etwa 1min kann der Stecker gezogen werden.">
+                        Gerät herunterfahren.
+                    </button>
+
+                    <button id="reboot" title="Startet dein Datenvogelhäuschen bei Fehlfunktion komplett neu. Bei dieser Option wird die gesamte Firmware heruntergefahren.">
+                        Gerät neustarten.
+                    </button>
+
+                    <button id="software-restart" title="Startet nur die Software deines Datenvogelhäuschens neu. Bei dieser Option bleibt die Firmware eingeschaltet und weitere Services laufen ununterbrochen weiter.">
+                        Software neustarten.
+                    </button>
+
+                    <a href="//datenvogelhäuschen.de">Homepage</a> &middot; <a href="api.html">API</a> &middot; <a href="//datenvogelhäuschen.de/spende">&#10084;</a>
+
+                    <div class="mb-4"></div>
+                </div>
+            </div>
+        </div>
+
+        <script src="js/dashboard.js"></script>
+    </body>
+</html>

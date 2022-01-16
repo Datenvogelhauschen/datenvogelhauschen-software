@@ -1,0 +1,70 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <title>Datenvogelhäuschen - API</title>
+
+        <style>
+            table, th, td {
+                border: black solid 1px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1>
+            Datenvogelhäuschen API
+        </h1>
+
+
+        <h2>
+            Sensors
+        </h2>
+
+        <details open>
+            <summary><b>GET /api/v1/sensors.json</b></summary>
+
+            <h3>
+                Request
+            </h3>
+                No parameters.
+
+            <h3>
+                Response
+            </h3>
+            <textarea disabled>
+{
+    "success": true,
+    "sensors": {
+        "temperature": 25.5, // Temperature in °C
+        "humidity": 0.5, // Humidity in 1E
+        "pressure": 1200.3, // Pressure in hPa
+        "tvoc": 100.0, // TVOC
+        "co2": 1000.0 // CO2 in ppm
+    }
+}
+            </textarea>
+        </details>
+
+        <h2>
+            Camera
+        </h2>
+
+        <details open>
+            <summary><b>GET /api/v1/camera.jpg</b></summary>
+
+            <h3>
+                Request
+            </h3>
+            No parameters.
+
+            <h3>
+                Response
+            </h3>
+            JPEG with current camera image as raw data.
+        </details>
+    </body>
+</html>
