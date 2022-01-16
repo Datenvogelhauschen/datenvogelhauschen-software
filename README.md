@@ -1,4 +1,9 @@
 # 🕊️ Datenvogelhäuschen
+
+[![made-with-javascript](https://img.shields.io/badge/Made%20with-JavaScript-1f425f.svg)](https://www.javascript.com)
+[![GitHub release](https://img.shields.io/github/release/jbohnst/datenvogelhauschen-software.svg)](https://github.com/jbohnst/datenvogelhauschen-software/releases/)
+[![Open Source? Yes!](https://badgen.net/badge/Open%20Source%3F/Yes%21/blue?icon=github)](https://github.com/jbohnst/datenvogelhauschen-software)
+
 A digital effort to protect our local fauna using data analysis. 
 This project was created as part of the [VDE Technikpreis 2021](https://www.vde-rhein-ruhr.de/de/youngnet-regional/schule-mint/technikpreis).
 
