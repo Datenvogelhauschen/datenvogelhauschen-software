@@ -9,6 +9,7 @@ import {DhtHelper} from "./helper/DhtHelper";
 import {Datenvogelhauschen} from "../Datenvogelhauschen";
 import {Ccs811Helper} from "./helper/Ccs811Helper";
 import {SensorDatabase} from "../database/SensorDatabase";
+import {OnlineService} from "../communication/OnlineService";
 
 /**
  * Manages Sensor instances
@@ -30,10 +31,14 @@ export class SensorManager {
   db: SensorDatabase;
   dbWriteInterval: any;
 
+  onlineService: OnlineService;
+
   /**
    * Adds all sensors from class to registeredSensors list
    */
-  constructor(db: SensorDatabase) {
+  constructor(db: SensorDatabase, onlineService: OnlineService) {
+    this.onlineService = onlineService;
+
     this.registeredSensors = [
       this.co2Sensor,
       this.humiditySensor,
@@ -53,7 +58,13 @@ export class SensorManager {
           );
         }
 
-        // TODO: online service
+        this.onlineService.sendSensorData(
+          this.temperatureSensor.getValue(),
+          this.humiditySensor.getValue(),
+          this.pressureSensor.getValue(),
+          this.co2Sensor.getValue(),
+          this.tvocSensor.getValue()
+        );
 
         console.log(`Sensor data was written to the local database and sent to the Datenvogelhäuschen online service (if allowed)!`);
       }, 300000); // 300000s = 5min

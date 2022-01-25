@@ -2,6 +2,7 @@ import {Endpoint} from "../../../Endpoint";
 import {ERequestMethods} from "../../../ERequestMethods";
 import {Request, Response} from "express";
 import {FaultReporter} from "../../../../sensors/faults/FaultReporter";
+import {OnlineService} from "../../../../communication/OnlineService";
 
 /**
  * GET /v1/feed
@@ -29,9 +30,21 @@ export class GetFeedEndpoint extends Endpoint {
       });
     }
 
+    const onlineServiceFeed: {title: string, content: string}[] = [];
+
+    if(OnlineService.ANY_ERRORS) {
+      onlineServiceFeed.push({
+        title: `<b>Warnung:</b> Verbindung zum Online Service nicht möglich!`,
+        content: `Beim senden der Sensor-/Kameradaten ist ein Fehler aufgetreten. Bitte stelle sicher, dass
+                  dein Datenvogelhäuschen Internetzugang hat. Möglicherweise ist dies aber auch unser Fehler. In
+                  diesem Falle bitten wir um deine Geduld und deine besten Wünsche.`
+      })
+    }
+
     const feed = [
       ...onlineFeed,
-      ...faultFeed
+      ...faultFeed,
+      ...onlineServiceFeed
     ];
 
     console.log(`Composed feed with ${feed.length} elements from faults and online feed!`);

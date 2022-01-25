@@ -17,17 +17,7 @@
      * Updates video stream
      */
     const updateImage = () => {
-        const timestamp = new Date().getTime();
-
-        const preloadedImage = document.createElement("img");
-
-        preloadedImage.onload = () => {
-            setTimeout(() => {
-                streamImage.src = "/v1/camera?" + timestamp;
-            }, 100);
-        }
-
-        preloadedImage.src = "/v1/camera?" + timestamp;
+        streamImage.src = "/v1/camera?" + new Date().getTime(); // TODO Replace
     }
 
     /**

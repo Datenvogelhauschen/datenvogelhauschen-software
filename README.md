@@ -4,7 +4,7 @@
 [![GitHub release](https://img.shields.io/github/release/jbohnst/datenvogelhauschen-software.svg)](https://github.com/jbohnst/datenvogelhauschen-software/releases/)
 [![Open Source? Yes!](https://badgen.net/badge/Open%20Source%3F/Yes%21/blue?icon=github)](https://github.com/jbohnst/datenvogelhauschen-software)
 
-A digital effort to protect our local fauna using data analysis. 
+A digital effort to protect our local fauna using data analysis.
 This project was created as part of the [VDE Technikpreis 2021](https://www.vde-rhein-ruhr.de/de/youngnet-regional/schule-mint/technikpreis).
 
 
@@ -65,27 +65,27 @@ automatically on startup. This is helpful in case of power shortages.
 ## 👥 Contributors
 ### Our Team
 This Project was realized by:
- - Maximilian Lorenz
- - Mathis Vinzent Tillenburg
- - Marian Wodarczak
- - Samir Labas
- - Ben Engelhardt
- - Joshua Bohnhorst ([@jbohnst](https://github.com/jbohnst))
+- Maximilian Lorenz
+- Mathis Vinzent Tillenburg
+- Marian Wodarczak
+- Samir Labas
+- Ben Engelhardt
+- Joshua Bohnhorst ([@jbohnst](https://github.com/jbohnst))
 
-Under supervision of: 
+Under supervision of:
 - Christian Lübbering ([DBG Essen](https://dbgessen.eu/))
 
 As part of the [VDE Technikpreis 2021](https://www.vde-rhein-ruhr.de/de/youngnet-regional/schule-mint/technikpreis).
 
 ### Contributions from other projects
-To realize this project we use various libraries and documentations developed by volunteers 
-outside our team. We sincerely thank everyone dedicating their free time to the Open Source 
+To realize this project we use various libraries and documentations developed by volunteers
+outside our team. We sincerely thank everyone dedicating their free time to the Open Source
 projects used in the Datenvogelhäuschen.
 
 Here are a few libraries we used:
 
-- [i2c-bus](https://github.com/fivdi/i2c-bus) made by [@fivdi](https://github.com/fivadi) and 
-  [a few other volunteers](https://github.com/fivdi/i2c-bus/graphs/contributors). 
+- [i2c-bus](https://github.com/fivdi/i2c-bus) made by [@fivdi](https://github.com/fivadi) and
+  [a few other volunteers](https://github.com/fivdi/i2c-bus/graphs/contributors).
 - [pigpio](https://github.com/joan2937/pigpio) as well as the [node wrapper](https://github.com/fivdi/pigpio) also
   made by [@fivdi](https://github.com/fivadi) and [a few volunteers](https://github.com/fivdi/pigpio/graphs/contributors).
 - [pigpio-dht](https://github.com/depuits/pigpio-dht) made by [@depuits](https://github.com/depuits) and

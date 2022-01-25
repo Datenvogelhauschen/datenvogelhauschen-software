@@ -25,6 +25,7 @@ import {GetRebootEndpoint} from "./web/endpoints/v1/actions/reboot/GetRebootEndp
 import {GetShutdownEndpoint} from "./web/endpoints/v1/actions/shutdown/GetShutdownEndpoint";
 import version from "./version";
 import constants from "./constants";
+import {OnlineService} from "./communication/OnlineService";
 
 /**
  * Datenvogelhäuschen main class
@@ -56,7 +57,7 @@ export class Datenvogelhauschen {
    * Datenvogelhäuschen entry function
    */
   main = () => {
-    console.log(`${version.softwareName} - ${version.softwareVersionMajor}.${version.softwareVersionMinor} #${version.softwareVersionCommit}`);
+    console.log(`>>> ${version.softwareName} - ${version.softwareVersionMajor}.${version.softwareVersionMinor} #${version.softwareVersionCommit}`);
 
     // Read configuration
     const config = <IConfiguration> jsyaml.load(fs.readFileSync(constants.filepaths.configuration, "utf-8"));
@@ -77,9 +78,10 @@ export class Datenvogelhauschen {
       Datenvogelhauschen.CONFIGURATION.statusLed.enabled);
 
     const db = new SensorDatabase();
+    const onlineService = new OnlineService();
 
-    const sensorManager = new SensorManager(db);
-    const camera = new Camera();
+    const sensorManager = new SensorManager(db, onlineService);
+    const camera = new Camera(onlineService);
 
     // Read serial number from filesystem
     this.readSerialNumber();

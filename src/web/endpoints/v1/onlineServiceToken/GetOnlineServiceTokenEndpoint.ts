@@ -1,9 +1,7 @@
 import {Endpoint} from "../../../Endpoint";
 import {ERequestMethods} from "../../../ERequestMethods";
 import {Request, Response} from "express";
-import {exec} from "child_process";
-import crypto from "crypto";
-import {Datenvogelhauschen} from "../../../../Datenvogelhauschen";
+import {OnlineServiceTokenHelper} from "../../../../communication/OnlineServiceTokenHelper";
 
 /**
  * GET /v1/actions/onlineServiceToken
@@ -14,20 +12,11 @@ export class GetOnlineServiceTokenEndpoint extends Endpoint {
   method = +ERequestMethods.GET;
 
   handle = (req: Request, res: Response) => {
-    const date = new Date();
-    const year = date.getFullYear();
-    const month = date.getMonth();
-    const firstDayTimestamp = new Date(year, month, 1).getTime();
-
-    let hash = crypto.createHash("sha1");
-    hash.update(Datenvogelhauschen.SERIAL_NUMBER + firstDayTimestamp.toString());
-    const currentHash = hash.digest("hex");
-
-    console.log(`Calculated current time-based authentication hash (timestamp: ${firstDayTimestamp}): ${currentHash.substring(0, 5)}...................................`);
+    const hash = OnlineServiceTokenHelper.getCurrentToken();
 
     res.json({
-      currentHash: currentHash,
-      createdFrom: firstDayTimestamp
+      currentHash: hash.hash,
+      createdFrom: hash.timestamp
     });
   }
 }

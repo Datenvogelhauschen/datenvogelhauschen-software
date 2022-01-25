@@ -3,6 +3,7 @@ import gm from "gm";
 import fs from "fs";
 import constants from "../constants";
 import {Datenvogelhauschen} from "../Datenvogelhauschen";
+import {OnlineService} from "../communication/OnlineService";
 
 /**
  * PiCam wrapper
@@ -15,10 +16,14 @@ export class Camera {
   snapInterval: any;
   currentPhotoCount: number = 0;
 
+  onlineService: OnlineService;
+
   /**
    * Constructs new Camera class
    */
-  constructor() {
+  constructor(onlineService: OnlineService) {
+    this.onlineService = onlineService;
+
     this.piCam = new PiCamera({
       mode: "photo",
       width: 1920,
@@ -53,6 +58,7 @@ export class Camera {
         if(Datenvogelhauschen.USER_SETTINGS.localData.saveLocally && this.currentPhotoCount > 4) {
           this.currentPhotoCount = 0;
           fs.copyFileSync(this.photoStampedPath, constants.filepaths.camera_captures + "/" + new Date(Date.now()).toISOString() + ".jpg");
+          this.onlineService.postCurrentCameraImage(this.photoStampedPath);
           console.log(`Saved camera image to local storage!`);
         } else {
           this.currentPhotoCount++;
