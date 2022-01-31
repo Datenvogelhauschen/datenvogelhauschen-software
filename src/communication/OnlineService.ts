@@ -33,7 +33,10 @@ export class OnlineService {
         tvoc: tvoc
       }, {
         headers: {
-          "Authentication": "Bearer hardwareToken=" + token.hash + "|" + token.timestamp
+          "Authentication": "HardwareToken " + bota(JSON.stringify({
+            hash: token.hash,
+            timestamp: token.timestamp
+          }))
         }
       });
 
@@ -63,7 +66,10 @@ export class OnlineService {
 
       const resp = await axios.post("v1/deviceGateway/camera", form, {
         headers: {
-          "Authentication": "Bearer hardwareToken=" + token.hash + "|" + token.timestamp
+          "Authentication": "HardwareToken " + bota(JSON.stringify({
+            hash: token.hash,
+            timestamp: token.timestamp
+          }))
         }
       });
 
