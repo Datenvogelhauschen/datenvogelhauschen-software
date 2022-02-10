@@ -38,8 +38,9 @@ Then `cd` into the `datenvogelhauschen-software/` directory and install the requ
 $ sudo apt-get update
 $ sudo apt-get install ntfs-3g pigpio graphicsmagick nodejs npm ttf-mscorefonts-installer python3
 
-# Install the Datenvogelhäuschen npm package requirements
-$ npm install
+# Install the Datenvogelhäuschen npm package requirements (needs to run with python2 and python3 because of node-gyp)
+$ npm install --python=python2
+$ npm install --python=python3
 ```
 
 Now, as the `bmp280` package contains a typo, you'll need to go into the `node_modules/`
