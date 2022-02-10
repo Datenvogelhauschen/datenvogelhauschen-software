@@ -4,11 +4,13 @@
   "description": "Datenvogelhäuschen software to be included in firmware image",
   "main": "dist/index.js",
   "scripts": {
-    "prebuild": "node ./scripts/prebuild.js",
+    "prebuild": "npm run update && npm run version",
+    "version": "node ./scripts/prebuild.js",
     "build": "tsc",
     "prestart": "npm run build",
     "start": "node ./dist/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "update": "git pull"
   },
   "author": "jbohnst",
   "license": "ISC",
