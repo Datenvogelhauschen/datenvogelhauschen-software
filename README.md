@@ -36,7 +36,7 @@ Then `cd` into the `datenvogelhauschen-software/` directory and install the requ
 # If you want to export data to another filesystem than NTFS or ext4, you can add the according packages here.
 # Be aware that some filesystems like Fat32 will not work by their nature.
 $ sudo apt-get update
-$ sudo apt-get install ntfs-3g pigpio graphicsmagick nodejs npm ttf-mscorefonts-installer python3
+$ sudo apt-get install ntfs-3g pigpio graphicsmagick nodejs npm ttf-mscorefonts-installer python3 python2
 
 # Install the Datenvogelhäuschen npm package requirements (needs to run with python2 and python3 because of node-gyp)
 $ npm install --python=python2
@@ -51,7 +51,7 @@ Now that you've installed the `datenvogelhauschen` node package, you can build i
 
 ```shell
 # This software needs to run as root to be able to make use of all features
-$ npm run build --versionMajor=0 --versionMinor=0
+$ npm start --versionMajor=0 --versionMinor=0
 
 # Or, if this doesn't work because of permissions:
 $ npm run build && sudo $(which node) ./dist/index.js
@@ -60,8 +60,9 @@ $ npm run build && sudo $(which node) ./dist/index.js
 The TypeScript scripts will be compiled and the software will be executed. Open `http://raspberrypi/`
 (or whatever device name you may choose) in your browser to configure your Datenvogelhäuschen.
 
-And don't forget to create a systemd service if you want the Datenvogelhäuschen software to run
-automatically on startup. This is helpful in case of power shortages.
+Don't forget to use pm2 or something similar to ensure that the software is started when the device boots.
+This is important to ensure continous running in case of power shortages which will happen if you're using e.g. a
+solar panel.
 
 ## 👥 Contributors
 ### Our Team
