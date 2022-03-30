@@ -79,7 +79,7 @@ export class OnlineService {
         console.log("Posted current camera data to online service!");
         OnlineService.ANY_ERRORS = false;
       } else {
-        console.log("Error while posting current camera data to online service!");
+        console.log("Error while posting current sensor data to online service! Response: " + JSON.stringify(resp));
         OnlineService.ANY_ERRORS = true;
       }
     } catch (e) {
