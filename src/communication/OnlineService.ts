@@ -33,7 +33,7 @@ export class OnlineService {
         tvoc: tvoc
       }, {
         headers: {
-          "Authentication": "HardwareToken " + btoa(JSON.stringify({
+          "Authorization": "HardwareToken " + btoa(JSON.stringify({
             hash: token.hash,
             timestamp: token.timestamp,
             rawHash: token.rawHash
@@ -67,7 +67,7 @@ export class OnlineService {
 
       const resp = await axios.post("v1/deviceGateway/camera", form, {
         headers: {
-          "Authentication": "HardwareToken " + btoa(JSON.stringify({
+          "Authorization": "HardwareToken " + btoa(JSON.stringify({
             hash: token.hash,
             timestamp: token.timestamp,
             rawHash: token.rawHash
