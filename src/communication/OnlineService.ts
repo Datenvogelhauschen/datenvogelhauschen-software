@@ -65,7 +65,7 @@ export class OnlineService {
       const form = new FormData();
       form.append("file", fs.createReadStream(localPath));
 
-      const resp = await axios.post("v1/deviceGateway/camera", form, {
+      const resp = await axios.post(this.apiBaseUrl + "v1/deviceGateway/camera", form, {
         headers: {
           "Authorization": "HardwareToken " + btoa(JSON.stringify({
             hash: token.hash,
