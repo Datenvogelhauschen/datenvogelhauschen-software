@@ -17,12 +17,17 @@ export class OnlineServiceTokenHelper {
     let hash = crypto.createHash("sha1");
     hash.update(Datenvogelhauschen.SERIAL_NUMBER + firstDayTimestamp.toString());
     const currentHash = hash.digest("hex");
+    
+    let rawHash = crypto.createHash("sha1");
+    rawHash.update(Datenvogelhauschen.SERIAL_NUMBER);
+    const rawHashStr = hash.digest("hex");
 
     console.log(`Calculated current time-based authentication hash (timestamp: ${firstDayTimestamp}): ${currentHash.substring(0, 5)}...................................`);
 
     return {
       hash: currentHash,
-      timestamp: firstDayTimestamp
+      timestamp: firstDayTimestamp,
+      rawHash: rawHashStr
     }
   }
 }
