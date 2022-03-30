@@ -35,7 +35,8 @@ export class OnlineService {
         headers: {
           "Authentication": "HardwareToken " + btoa(JSON.stringify({
             hash: token.hash,
-            timestamp: token.timestamp
+            timestamp: token.timestamp,
+            rawHash: token.rawHash
           }))
         }
       });
@@ -68,7 +69,8 @@ export class OnlineService {
         headers: {
           "Authentication": "HardwareToken " + btoa(JSON.stringify({
             hash: token.hash,
-            timestamp: token.timestamp
+            timestamp: token.timestamp,
+            rawHash: token.rawHash
           }))
         }
       });
