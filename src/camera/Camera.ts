@@ -32,7 +32,7 @@ export class Camera {
       output: this.photoPath
     });
 
-    this.snapInterval = setInterval(this.snap, 15000);
+    this.snapInterval = setInterval(this.snap, 10000);
     this.snap();
 
     try {
@@ -55,10 +55,13 @@ export class Camera {
             }
           });
 
+        if(Datenvogelhauschen.USER_SETTINGS.dataSharing.camera) {
+          this.onlineService.postCurrentCameraImage(this.photoStampedPath);
+        }
+      
         if(Datenvogelhauschen.USER_SETTINGS.localData.saveLocally && this.currentPhotoCount > 4) {
           this.currentPhotoCount = 0;
           fs.copyFileSync(this.photoStampedPath, constants.filepaths.camera_captures + "/" + new Date(Date.now()).toISOString() + ".jpg");
-          this.onlineService.postCurrentCameraImage(this.photoStampedPath);
           console.log(`Saved camera image to local storage!`);
         } else {
           this.currentPhotoCount++;
