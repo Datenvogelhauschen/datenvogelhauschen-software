@@ -20,7 +20,7 @@ export class OnlineServiceTokenHelper {
     
     let rawHash = crypto.createHash("sha1");
     rawHash.update(Datenvogelhauschen.SERIAL_NUMBER);
-    const rawHashStr = hash.digest("hex");
+    const rawHashStr = rawHash.digest("hex");
 
     console.log(`Calculated current time-based authentication hash (timestamp: ${firstDayTimestamp}): ${currentHash.substring(0, 5)}...................................`);
 
