@@ -16,7 +16,8 @@ export class StatusLed {
   enabled: boolean;
   gpio: Gpio;
   currentInterval: any;
-
+  currentMode: string;
+  
   /**
    * Constructs new StatusLed class
    * @param pin GPIO pin of StatusLed
@@ -36,6 +37,12 @@ export class StatusLed {
   }
 
   danger = () => {
+    if(this.currentMode == "danger") {
+      return;
+    }
+    
+    this.currentMode = "danger";
+    
     console.log(`Status LED signal: danger`);
 
     clearInterval(this.currentInterval);
@@ -50,6 +57,12 @@ export class StatusLed {
   }
 
   power = () => {
+    if(this.currentMode == "power") {
+      return;
+    }
+    
+    this.currentMode = "power";
+    
     console.log(`Status LED signal: power`);
 
     clearInterval(this.currentInterval);
@@ -64,6 +77,12 @@ export class StatusLed {
   }
 
   off = () => {
+    if(this.currentMode == "off") {
+      return;
+    }
+    
+    this.currentMode = "off";
+    
     console.log(`Status LED signal: off`);
 
     clearInterval(this.currentInterval);
