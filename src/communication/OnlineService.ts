@@ -71,7 +71,8 @@ export class OnlineService {
             hash: token.hash,
             timestamp: token.timestamp,
             rawHash: token.rawHash
-          }))
+          })),
+          "Content-Type": "multipart/form-data"
         }
       });
 
