@@ -134,7 +134,7 @@ export class Datenvogelhauschen {
         return;
       }
 
-      Datenvogelhauschen.SERIAL_NUMBER = data.toString();
+      Datenvogelhauschen.SERIAL_NUMBER = data.toString().trim();
 
       let hash = crypto.createHash("sha1");
       hash.update(Datenvogelhauschen.SERIAL_NUMBER);
