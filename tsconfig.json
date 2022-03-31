@@ -10,16 +10,7 @@
     "baseUrl": ".",
     "listEmittedFiles": true,
     "forceConsistentCasingInFileNames": false,
-    "lib": [
-      "ES5",
-      "ES6",
-      "ES2016",
-      "ES2017",
-      "ES2018",
-      "ES2019",
-      "ES2020",
-      "ES2021"
-    ],
+    "lib": "es2021",
     "paths": {
       "*": [
         "node_modules/*"
