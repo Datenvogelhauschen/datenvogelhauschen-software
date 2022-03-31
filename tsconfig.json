@@ -10,9 +10,7 @@
     "baseUrl": ".",
     "listEmittedFiles": true,
     "forceConsistentCasingInFileNames": false,
-    "compilerOptions": {
-      "lib": "es2021"
-    },
+    "lib": "es2021",
     "paths": {
       "*": [
         "node_modules/*"
