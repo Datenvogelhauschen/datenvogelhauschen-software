@@ -72,7 +72,7 @@ export class OnlineService {
             timestamp: token.timestamp,
             rawHash: token.rawHash
           })),
-          "Content-Type": "multipart/form-data"
+          ...form.getHeaders()
         }
       });
 
