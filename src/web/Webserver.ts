@@ -1,6 +1,7 @@
 import express, {Express} from "express";
 import {Server} from "http";
 import {Datenvogelhauschen} from "../Datenvogelhauschen";
+import serveIndex from "serve-index";
 
 /**
  * Webserver for static content and API routes
@@ -16,6 +17,9 @@ export class Webserver {
     // Middleware
     this.app.use(express.static("static"));
     this.app.use(express.json());
+    this.app.use("/captures", express.static("camera_captures/"), serveIndex("camera_captures/"), {
+      icons: true
+    });
 
     console.log(`Webserver ready to be started!`);
   }
