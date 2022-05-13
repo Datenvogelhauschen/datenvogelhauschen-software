@@ -17,9 +17,9 @@ export class Webserver {
     // Middleware
     this.app.use(express.static("static"));
     this.app.use(express.json());
-    this.app.use("/captures", express.static("camera_captures/"), serveIndex("camera_captures/"), {
+    this.app.use("/captures", express.static("camera_captures/"), serveIndex("camera_captures/", {
       icons: true
-    });
+    }));
 
     console.log(`Webserver ready to be started!`);
   }
