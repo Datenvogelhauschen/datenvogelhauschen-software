@@ -37,4 +37,4 @@ webserver:
 # This will be used to authenticate with the Datenvogelhäuschen servers
 # to publish data.
 onlineService:
-  baseUrl: "https://api.xn--datenvogelhuschen-0qb.de/"
+  baseUrl: "http://api.xn--datenvogelhuschen-0qb.de/"
